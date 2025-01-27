@@ -1,0 +1,21 @@
+.nav {
+  width: 100%;
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    li {
+      all: unset;
+      width: fit-content;
+      a {
+        all: unset;
+        width: auto;
+        font-size: 1rem;
+        text-transform: uppercase;
+        &:hover {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
