@@ -2,7 +2,7 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./layout/MainLayout";
 import { NavLinks } from "./utils/NavLinks";
-import { CharacterDetails } from "./pages/CharacterDetails";
+// import { CharacterDetails } from "./pages/CharacterDetails";
 // import { Home, Contact } from "../pages/Index";
 
 function App() {
@@ -19,8 +19,7 @@ function App() {
                 key={index}
               />
             ))}
-            <Route path="/characters/:id" element={<CharacterDetails />} />
-            <Route path="/sessions/:id" element={<CharacterDetails />} />
+            {/* <Route path="/characters/:id" element={<CharacterDetails />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,5 +1,3 @@
-import { Characters } from "./Characters";
-import { Map } from "./Map";
-import { Sessions } from "./Sessions";
+ import { Home } from "./Home";
 
-export { Characters, Map, Sessions };
+export { Home };
