@@ -14,7 +14,7 @@ export const Nav = () => {
   return (
     <AppBar>
       <Toolbar>
-        <Typography>Hotel side prøve</Typography>
+        <Typography>Hotel Overlook</Typography>
         <Box>
           <List sx={{ display: "flex" }}>
             {NavLinks.map((link, index) => (
