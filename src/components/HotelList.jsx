@@ -1,6 +1,4 @@
-// src/components/HotelList.js
-import React from "react";
-import useFetch from "../hooks/useFetch";
+import { useFetch } from "../hooks/useFetch";
 import {
   CircularProgress,
   Alert,
@@ -12,7 +10,9 @@ import {
 } from "@mui/material";
 
 export const HotelList = () => {
-  const { data, loading, error } = useFetch("http://localhost:4000/api/hotels");
+  const { data, loading, error } = useFetch(
+    "http://localhost:4000/destinations"
+  );
 
   if (loading) return <CircularProgress />;
   if (error) return <Alert severity="error">{error}</Alert>;
