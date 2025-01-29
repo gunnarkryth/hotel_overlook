@@ -1,37 +1,29 @@
+// src/hooks/useFetch.js
 import { useState, useEffect } from "react";
 
-export const useFetch = ({ endpoint, query }) => {
+export const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
       try {
-        const queryString = query
-          ? "?" + new URLSearchParams(query).toString()
-          : "";
-
-        const response = await fetch(
-          `http://localhost:4000/${endpoint}${queryString}`
-        );
-        
+        const response = await fetch(url);
         if (!response.ok) {
-          throw new Error(`Failed to fetch: ${response.statusText}`);
+          throw new Error("Fejl ved hentning af data");
         }
-
         const result = await response.json();
         setData(result);
-      } catch (err) {
-        setError(err);
+      } catch (error) {
+        setError(error.message);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [endpoint, JSON.stringify(query)]);
+  }, [url]);
 
   return { data, loading, error };
 };

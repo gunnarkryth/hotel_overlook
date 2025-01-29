@@ -1,7 +1,8 @@
-import { useFetch } from "../utils/UseFetch";
+import { useFetch } from "../hooks/UseFetch";
 import { Avatar, Box, Card, CardHeader } from "@mui/material";
 import { Masonry } from "@mui/lab";
 import { NavLink } from "react-router-dom";
+import HotelList from "../components/HotelList";
 
 export const Home = () => {
   // const { data, loading, error } = useFetch({ contentType: "character" });
@@ -20,6 +21,8 @@ export const Home = () => {
   };
 
   return (
-   <p>Hey</p>
+    <p>
+      <HotelList />
+    </p>
   );
 };
