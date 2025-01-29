@@ -9,13 +9,13 @@ import {
   ListItemText,
 } from "@mui/material";
 
-export const HotelList = () => {
-  const { data, loading, error } = useFetch(
-    "http://localhost:4000/destinations"
-  );
+export const Slideshow = () => {
+  const { data, loading, error } = useFetch("http://localhost:4000/imagelist");
 
   if (loading) return <CircularProgress />;
   if (error) return <Alert severity="error">{error}</Alert>;
+
+  console.log(data);
 
   return (
     <Paper elevation={3} style={{ padding: "20px", margin: "20px" }}>
@@ -25,7 +25,7 @@ export const HotelList = () => {
       <List>
         {data?.map((hotel) => (
           <ListItem key={hotel.id}>
-            <ListItemText primary={hotel.name} secondary={``} />
+            <img src="" alt="" srcset="" />
           </ListItem>
         ))}
       </List>
