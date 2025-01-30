@@ -27,6 +27,7 @@ export const Slideshow = () => {
         position: "relative",
         width: "100%",
         maxWidth: 600,
+        height: "300px",
         mx: "auto",
         overflow: "hidden",
       }}
@@ -35,7 +36,12 @@ export const Slideshow = () => {
         component="img"
         src={imageArray[index]}
         alt="Slideshow"
-        sx={{ width: "100%", height: "auto" }}
+        sx={{
+          width: "100%",
+          height: "auto",
+          objectFit: "cover",
+          backgroundSize: "cover",
+        }}
       />
       <IconButton
         onClick={prevImage}
@@ -44,6 +50,7 @@ export const Slideshow = () => {
           top: "50%",
           left: 10,
           transform: "translateY(-50%)",
+          color: "white",
         }}
       >
         <ArrowBackIos />
@@ -55,6 +62,7 @@ export const Slideshow = () => {
           top: "50%",
           right: 10,
           transform: "translateY(-50%)",
+          color: "white",
         }}
       >
         <ArrowForwardIos />

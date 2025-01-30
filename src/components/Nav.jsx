@@ -12,13 +12,13 @@ import {
 
 export const Nav = () => {
   return (
-    <AppBar>
+    <AppBar sx={{ bgcolor: "#000000" }}>
       <Toolbar>
-        <Typography>Hotel Overlook</Typography>
+        <img src="src/assets/icons/hotel-overlook-logo.png" alt="" />
         <Box>
           <List sx={{ display: "flex" }}>
             {NavLinks.map((link, index) => (
-              <ListItem key={index}>
+              <ListItem key={index} sx={{ textTransform: "uppercase" }}>
                 <ListItemButton
                   component={NavLink}
                   to={link.path ? link.path : "/" + link.name}
