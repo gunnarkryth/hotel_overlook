@@ -1,5 +1,9 @@
+import { HotelList } from "../components/HotelList";
+
 export const HotelsAndDestinations = () => {
   return (
-    <div>HotelsAndDestinations</div>
+    <div>
+      <HotelList/>
+    </div>
   )
 }

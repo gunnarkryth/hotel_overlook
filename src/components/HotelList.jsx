@@ -7,6 +7,11 @@ import {
   List,
   ListItem,
   ListItemText,
+  AppBar,
+  Toolbar,
+  Grid,
+  Card,
+  Box,
 } from "@mui/material";
 
 export const HotelList = () => {
@@ -19,16 +24,27 @@ export const HotelList = () => {
 
   return (
     <Paper elevation={3} style={{ padding: "20px", margin: "20px" }}>
-      <Typography variant="h4" gutterBottom>
-        Hoteller
-      </Typography>
-      <List>
-        {data?.map((hotel) => (
-          <ListItem key={hotel.id}>
-            <ListItemText primary={hotel.name} secondary={``} />
+      // Countries nav bar
+      <List sx={{ display: "flex", justifyContent: "center" }}>
+        {data?.map((destination) => (
+          <ListItem key={destination.id}>
+            <ListItemText primary={destination.name} secondary={``} />
           </ListItem>
         ))}
       </List>
+      // Hotels by country
+      <Grid container>
+        {data?.map((hotel) => (
+          <Grid item>
+            <Card>
+              <Box src="" />
+              <Typography variant="h3" color="initial">
+                {hotel.name}
+              </Typography>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     </Paper>
   );
 };
