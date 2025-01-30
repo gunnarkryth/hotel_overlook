@@ -7,7 +7,7 @@ import {
 } from "../pages/Index";
 
 export const NavLinks = [
-  { name: "Forside", isIndex: true, element: <Home /> },
+  { name: "Forside", path: "/", isIndex: true, element: <Home /> },
   {
     name: "Hoteller & destinationer",
     path: "/hotels_and_destinations",

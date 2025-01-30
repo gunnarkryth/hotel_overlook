@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Box, Paper, IconButton } from "@mui/material";
+import { Box, Paper, IconButton, Typography } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
 // Importér alle billeder i assets/images automatisk
-const images = import.meta.glob("../assets/images/*", { eager: true });
+const images = import.meta.glob("../assets/images/overlook/*", { eager: true });
 const imageArray = Object.values(images).map((img) => img.default);
 
 export const Slideshow = () => {
@@ -14,7 +14,7 @@ export const Slideshow = () => {
       setIndex((prevIndex) => (prevIndex + 1) % imageArray.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [index]);
 
   const nextImage = () => setIndex((prev) => (prev + 1) % imageArray.length);
   const prevImage = () =>
@@ -26,12 +26,42 @@ export const Slideshow = () => {
       sx={{
         position: "relative",
         width: "100%",
-        maxWidth: 600,
-        height: "300px",
+        maxWidth: "100vw",
+        height: "460px",
         mx: "auto",
         overflow: "hidden",
       }}
     >
+      <Box
+        sx={{
+          position: "absolute",
+          left: "10%",
+          top: "50%",
+        }}
+      >
+        <Typography
+          variant="h5"
+          sx={{
+            // width: "100%",
+            bgcolor: "#000000a0",
+            textTransform: "uppercase",
+            color: "#ffffff",
+            borderRadius: "0 0 1000px 0",
+            padding: "1rem",
+            paddingRight: "50px",
+          }}
+        >
+          Velkommen til Hotel Overlook Online
+        </Typography>
+        <Box
+          sx={{
+            height: "1rem",
+            width: "70%",
+            bgcolor: "#ff0000a0",
+            borderRadius: "0 0 1000px 0",
+          }}
+        />
+      </Box>
       <Box
         component="img"
         src={imageArray[index]}
@@ -39,8 +69,6 @@ export const Slideshow = () => {
         sx={{
           width: "100%",
           height: "auto",
-          objectFit: "cover",
-          backgroundSize: "cover",
         }}
       />
       <IconButton
