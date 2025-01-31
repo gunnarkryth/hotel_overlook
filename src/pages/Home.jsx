@@ -6,7 +6,6 @@ export const Home = () => {
     <div>
       <Slideshow />
 
-      {/* Latest News Section */}
       <section className="section">
         <h2 className="section-title">Seneste nyt</h2>
         <div className="news-grid">
@@ -20,7 +19,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Featured Rooms */}
       <section className="section">
         <h2 className="section-title">Værelser</h2>
         <div className="rooms-grid">

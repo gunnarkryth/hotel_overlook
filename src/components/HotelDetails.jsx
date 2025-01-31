@@ -1,9 +1,6 @@
 export const HotelDetails = () => {
-  // ... existing hooks ...
-
   return (
     <Box sx={{ maxWidth: 1200, mx: "auto", p: 3 }}>
-      {/* Hotel Header */}
       <Box sx={{ mb: 4 }}>
         <Typography
           variant="h2"
@@ -30,7 +27,6 @@ export const HotelDetails = () => {
         </Box>
       </Box>
 
-      {/* Room Listing */}
       <Grid container spacing={4}>
         {hotel?.rooms?.map((room) => (
           <Grid item xs={12} md={6} key={room.id}>
@@ -39,7 +35,6 @@ export const HotelDetails = () => {
                 {room.type}
               </Typography>
 
-              {/* Price Options */}
               <Grid container spacing={2} sx={{ mb: 2 }}>
                 <Grid item xs={6}>
                   <Paper sx={{ p: 2, bgcolor: "#f5f5f5" }}>
@@ -80,7 +75,6 @@ export const HotelDetails = () => {
                 </Grid>
               </Grid>
 
-              {/* Room Facilities */}
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
                 {room.facilities.map((facility) => (
                   <Chip

@@ -2,8 +2,6 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./layout/MainLayout";
 import { NavLinks } from "./utils/NavLinks";
-// import { CharacterDetails } from "./pages/CharacterDetails";
-// import { Home, Contact } from "../pages/Index";
 
 function App() {
   return (
